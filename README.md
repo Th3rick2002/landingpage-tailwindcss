@@ -1,52 +1,42 @@
-# Astro Starter Kit: Basics
+# Coffee Shop Landing page
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+## 👨‍💻 Tech stack
+- Astro
+- Tailwind CSS
+- Boxicons
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Estructura del proyecto
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── public/                 //recursos estaticos
+├── fonts/                  //fuentes del proyecto
+├── src/
+│   ├── assets/             //imagenes y otros recursos
+│   ├── components/
+│   │   └── layout/         //componentes que se repiten en varias paginas
+│   │   └── section/        //componentes que se repiten en una sola pagina
+│   │   └── shared/         //componentes que se reutilizan en más componentes
+│   │   └── ui/             //componentes independientes
+│   ├── layouts/
+│   │   └── Layout.astro    //layout de la pagina
+│   ├── pages/
+│   │   └── about.astro     //pagina sobre nosotros
+│   │   └── index.astro     //pagina principal
+│   │   └── products.astro  //pagina de productos
+│   │   └── season.astro    //pagina de productos y ofertas de temporada
+│   └── styles/             //estilos globales de tailwind y css
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🧞 Commandos
 
-## 🧞 Commands
+| Command                | Action                                                                           |
+|:-----------------------|:---------------------------------------------------------------------------------|
+| `pnpm install`         | Instalar dependencias                                                            |
+| `pnpm dev`             | Iniciar servidor de desarrollo local en `localhost:4321`                         |
+| `pnpm build`           | Construir version de producción en `./dist/`                                     |
+| `pnpm preview`         | Obtenga una vista previa de su compilación localmente, antes de implementarla    |
+| `pnpm astro ...`       | Ejecute comandos CLI como `astro add`, `astro check`                             |
+| `pnpm astro -- --help` | Obtenga ayuda para usar Astro CLI                                                |
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
