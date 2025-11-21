@@ -1,22 +1,24 @@
+---
+import HeaderComponent from "../components/layout/HeaderComponent.astro";
+import FooterComponent from "../components/layout/FooterComponent.astro";
+
+const title = Astro.props.title;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/CatppuccinCoffeescript.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+    <title>{title}</title>
 	</head>
-	<body>
-		<slot />
+	<body class="min-h-screen w-full flex flex-col m-0 p-0">
+        <HeaderComponent />
+        <main class="flex-1 w-full">
+		    <slot />
+        </main>
+        <FooterComponent />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

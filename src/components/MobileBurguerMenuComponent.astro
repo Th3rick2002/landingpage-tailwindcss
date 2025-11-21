@@ -1,0 +1,27 @@
+---
+import LinkIconComponent from "./shared/LinkIconComponent.astro";
+---
+
+<button id="btnBurguer" class="" client:load>
+  <span id="icon-open">
+    <LinkIconComponent name="menu" color="white" size="sm" type="regular" />
+  </span>
+
+    <span id="icon-close" class="hidden">
+    <LinkIconComponent name="x" color="white" size="sm" type="regular" />
+  </span>
+</button>
+
+<script client:load>
+    const btn = document.getElementById("btnBurguer");
+    const iconOpen = document.getElementById("icon-open");
+    const iconClose = document.getElementById("icon-close");
+
+    let isOpen = false;
+
+    btn.addEventListener("click", () => {
+        isOpen = !isOpen;
+        iconOpen.classList.toggle("hidden", isOpen);
+        iconClose.classList.toggle("hidden", !isOpen);
+    });
+</script>

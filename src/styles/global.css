@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #37261f;
+    --color-secondary: #906241;
+    --color-tertiary: #e1d5c5;
+
+    --font-title: "Playfair Display", sans-serif;
+    --font-logo: "Great Vibes", cursive;
+    --font-text: "Montserrat", sans-serif;
+}
+
+@font-face {
+    font-family: "Playfair Display";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("../../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Great Vibes";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../../fonts/Great_Vibes/GreatVibes-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("../../fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+}

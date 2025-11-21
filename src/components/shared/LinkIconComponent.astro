@@ -1,0 +1,21 @@
+---
+interface Props {
+    name: string;
+    color?: string;
+    size?: string;
+    type?: string;
+}
+
+const {
+    name,
+    color='white',
+    size='md',
+    type='logo'
+} = Astro.props;
+---
+
+<script>
+    import 'boxicons';
+</script>
+
+<box-icon type={type} name={name} size={size} color={color}></box-icon>

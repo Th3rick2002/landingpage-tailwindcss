@@ -1,0 +1,16 @@
+---
+interface Props {
+    text: string;
+    variant?: 'primary' | 'secondary';
+    href?: string;
+}
+
+const { text, variant= 'primary', href } = Astro.props;
+
+const button = {
+    primary: 'bg-primary text-white',
+    secondary: 'bg-secondary text-white'
+}
+---
+
+<a href={href ?? '#'} class=`px-8 py-4 font-bold rounded-full hover:scale-105 transition duration-200 ${button[variant]}`>{text}</a>
