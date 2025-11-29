@@ -1,0 +1,21 @@
+---
+const { title, subtitle, backgroundImage } = Astro.props;
+---
+
+<section 
+  class="relative bg-cover bg-center py-20 lg:py-32"
+  style={`background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('${backgroundImage}')`}
+>
+  <div class="container mx-auto px-4 text-center text-white">
+    <h1 class="text-4xl lg:text-6xl font-bold mb-4 font-title">{title}</h1>
+    <p class="text-xl lg:text-2xl mb-8 max-w-2xl mx-auto">{subtitle}</p>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <button class="bg-secondary text-white px-8 py-3 rounded-lg hover:bg-secondary/90 transition-colors duration-200 font-semibold text-lg">
+        Ver Ofertas
+      </button>
+      <button class="bg-white text-primary px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold text-lg">
+        Explorar Productos
+      </button>
+    </div>
+  </div>
+</section>
