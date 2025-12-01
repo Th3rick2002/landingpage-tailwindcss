@@ -1,8 +1,103 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import '../styles/global.css'
+import AboutHero from '../components/section/about/AboutHero.astro';
+import AboutStory from '../components/section/about/AboutStory.astro';
+import AboutValues from '../components/section/about/AboutValues.astro';
+import AboutMissionVision from '../components/section/about/AboutMissionVision.astro'; // Nuevo
+import AboutTeam from '../components/section/about/AboutTeam.astro'; // Nuevo
+import AboutTimeline from '../components/section/about/AboutTimeline.astro'; // Nuevo
+
+import cofeImage from '../assets/cofeABOUT.webp';
+
+// MOCK DATA para el equipo
+import teamMember1 from '../assets/team/member1.webp';
+import teamMember2 from '../assets/team/member2.webp';
+import teamMember3 from '../assets/team/member3.1.webp';
+import teamMember4 from '../assets/team/member4.webp';
+
+import '../styles/global.css';
+
+
+const heroData = {
+    title: "Nuestra Esencia",
+    subtitle: "Más que una cafetería, somos un refugio para los amantes del buen grano y las buenas conversaciones."
+};
+
+const storyData = {
+    title: "Nuestra Historia",
+    image: cofeImage,
+    paragraphs: [
+        "Fundada en 2025, Coffee Shop nació con una misión simple: traer el sabor auténtico del café de altura a nuestro vecindario. Lo que comenzó como un pequeño carrito, hoy es el punto de encuentro favorito de la comunidad.",
+        "Trabajamos directamente con productores locales para asegurar que cada taza no solo sepa bien, sino que haga el bien. Creemos en el comercio justo y en la calidad sin compromisos."
+    ]
+};
+
+const missionVisionData = {
+    mission: "Ofrecer la mejor experiencia de café artesanal, promoviendo prácticas sostenibles y fortaleciendo los lazos con nuestra comunidad.",
+    vision: "Convertirnos en la cafetería de referencia a nivel nacional, reconocida por la excelencia de nuestro producto y el impacto positivo en la vida de nuestros agricultores y clientes."
+};
+
+const valuesData = [
+    {
+        icon: "coffee", // Nombre del icono para boxicons
+        title: "Calidad Premium",
+        description: "Seleccionamos los mejores granos y los tostamos a la perfección para ti."
+    },
+    {
+        icon: "heart",
+        title: "Pasión",
+        description: "Cada barista en nuestro equipo ama lo que hace, y eso se nota en cada sorbo."
+    },
+    {
+        icon: "group",
+        title: "Comunidad",
+        description: "Somos un espacio abierto para todos. Tu segunda casa lejos de casa."
+    }
+];
+
+const teamData = [
+    { name: "Elena Ríos", role: "Fundadora & Tostadora Maestra", image: teamMember1 },
+    { name: "Marco Soto", role: "Jefe de Baristas", image: teamMember2 },
+    { name: "Sofía Luna", role: "Diseño & Marketing", image: teamMember3 },
+    { name: "Javier Paz", role: "Logística & Distribución", image: teamMember4 }
+];
+
+const timelineData = [
+    { year: 2010, title: "Apertura Inicial", description: "Lanzamiento como un pequeño carrito de café en el mercado local." },
+    { year: 2012, title: "Primera Tienda Física", description: "Inauguración de nuestra primera ubicación permanente y expansión del menú." },
+    { year: 2021, title: "Asociación con Productores", description: "Firma de acuerdos de comercio justo directo con tres fincas de café de altura." },
+    { year: 2024, title: "Lanzamiento de e-Commerce", description: "Inicio de la venta de granos de café tostado a nivel nacional a través de nuestra web." }
+];
 ---
 
-<Layout title="Sobre Nosotros">
+<Layout title="Sobre Nosotros - Coffee Shop">
+
+    <AboutHero
+            title={heroData.title}
+            subtitle={heroData.subtitle}
+    />
+
+    <AboutStory
+            title={storyData.title}
+            paragraphs={storyData.paragraphs}
+            image={storyData.image}
+    />
+
+    <AboutMissionVision
+            mission={missionVisionData.mission}
+            vision={missionVisionData.vision}
+    />
+
+    <AboutValues
+            values={valuesData}
+    />
+
+    <AboutTeam
+            team={teamData}
+    />
+
+    <AboutTimeline
+            milestones={timelineData}
+    />
 
 </Layout>
