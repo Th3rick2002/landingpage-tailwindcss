@@ -9,7 +9,9 @@ export default function ProductCard({
   description = "",
   alt = title,
   category,
-  onDetailsClick
+  onDetailsClick,
+  details = "",
+  ingredients = ""
 }) 
 {
   return (
@@ -23,7 +25,7 @@ export default function ProductCard({
         </a>
       )}
 
-      <div className="p-5">
+      <div className="p-5 font-text">
 
         {category && (
           <div className="mb-2">

@@ -21,7 +21,7 @@ export default function ProductFilter({ products }) {
 
   return (
     <section>
-      <div className="flex justify-center space-x-4 mb-8 mt-5">
+      <div className="flex justify-center space-x-4 mb-8 mt-5 font-text">
         {categories.map(category => (
           <button
             key={category}
@@ -29,7 +29,7 @@ export default function ProductFilter({ products }) {
             className={`
               py-2 px-4 rounded-lg font-semibold transition
               ${filter === category
-                ? 'bg-amber-900 text-white shadow-lg'
+                ? 'bg-secondary text-white hover:bg-secondary/90 shadow-lg'
                 : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
               }
             `}
