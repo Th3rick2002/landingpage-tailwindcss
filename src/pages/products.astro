@@ -1,9 +1,86 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ProductGallery from '../components/section/ProductGalleryPage.astro';
-import '../styles/global.css';
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+import ProductFilter from "../components/section/product/ProductFilter";
+
+const products = [
+  {
+    title: "Cappuccino",
+    price: 2,
+    image: "/cappuccino.webp",
+    description: "Ideal si no quiere amargar tu dia.",
+    category: "Bebidas calientes",
+    details:
+      "Cremoso por fuera, intenso por dentro, con una capa de espuma aterciopelada que lo hace irresistible.",
+    ingredients:
+      "Cafe semimolido semitostado, leche de avellana y con un toque de canela",
+  },
+  {
+    title: "Tiramisú",
+    price: 3.5,
+    image: "/tiramisu.webp",
+    description: "El postre italiano perfecto.",
+    category: "Reposteria",
+    details:
+      "Elaborado con queso mascarpone auténtico y un baño de café que realza cada capa.",
+    ingredients:
+      "café, mascarpone (queso italiano de pasta blanda hecho a base de crema), yemas de huevo y bizcochos de soletilla (savoiardi en italiano)",
+  },
+  {
+    title: "Americano",
+    price: 1.5,
+    image: "/americano.webp",
+    description: "Para un despertar fuerte y sin rodeos.",
+    category: "Bebidas calientes",
+    details:
+      "Doble shot de espresso diluido en agua caliente, conservando toda la intensidad del café con un final más suave y ligero.",
+    ingredients: "Café espresso, agua caliente",
+  },
+  {
+    title: "Cheesecake de Frutos Rojos",
+    price: 4.0,
+    image: "/cheesecake.webp",
+    description: "Fresco y cremoso, un clásico irresistible.",
+    category: "Reposteria",
+    details:
+      "Base de galleta de mantequilla, con un relleno de queso crema suave y cubierto con una mermelada artesanal de frutos rojos.",
+    ingredients: "Queso crema, galletas, mantequilla, azúcar, huevos, mermelada de frutos rojos",
+  },
+  {
+    title: "Brownie de Chocolate Oscuro",
+    price: 3.0,
+    image: "/brownie.webp",
+    description: "Intensidad y humedad en cada bocado.",
+    category: "Reposteria",
+    details:
+      "Elaborado con chocolate 70% cacao, lo que le da un sabor profundo. Su centro es húmedo y tiene una capa superior ligeramente crujiente.",
+    ingredients: "Chocolate oscuro, mantequilla, azúcar, huevos, harina, nueces (opcional)",
+  },
+  {
+    title: "Croissant de Almendras",
+    price: 2.5,
+    image: "/croissant.webp",
+    description: "Hojaldre crujiente y dulce relleno.",
+    category: "Reposteria",
+    details:
+      "Una masa de hojaldre perfectamente laminada y horneada, rellena con crema de almendras y cubierta con láminas de almendra tostada y azúcar glas.",
+    ingredients: "Masa de hojaldre, mantequilla, crema pastelera, almendra molida, azúcar glas",
+  }
+];
 ---
 
 <Layout title="Productos">
-  <ProductGallery></ProductGallery>
+  <section>
+    <div class="p-5 mt-6">
+      <h2 class="text-3xl text-center lg:text-4xl font-bold mb-4 font-title">
+        Nuestros productos
+      </h2>
+
+      <p class="text-center text-gray-600 font-text">
+        Disfruta de nuestros cafés y saborea los deliciosos postres
+      </p>
+    </div>
+
+    <ProductFilter products={products} client:load />
+  </section>
 </Layout>
