@@ -10,12 +10,18 @@ const { title, subtitle, backgroundImage } = Astro.props;
     <h1 class="text-4xl lg:text-6xl font-bold mb-4 font-title">{title}</h1>
     <p class="text-xl lg:text-2xl mb-8 max-w-2xl mx-auto">{subtitle}</p>
     <div class="flex gap-4 justify-center flex-wrap">
-      <button class="bg-secondary text-white px-8 py-3 rounded-lg hover:bg-secondary/90 transition-colors duration-200 font-semibold text-lg">
+      <a
+        href="#productos"
+        class="bg-secondary text-white px-8 py-3 rounded-lg hover:bg-secondary/90 transition-colors duration-200 font-semibold text-lg cursor-pointer inline-block"
+      >
         Ver Ofertas
-      </button>
-      <button class="bg-white text-primary px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold text-lg">
+      </a>
+      <a
+        href="/products"
+        class="bg-white text-primary px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold text-lg cursor-pointer inline-block"
+      >
         Explorar Productos
-      </button>
+      </a>
     </div>
   </div>
 </section>
