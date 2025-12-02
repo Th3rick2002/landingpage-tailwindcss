@@ -25,17 +25,17 @@ export default function ProductCard({
         </a>
       )}
 
-      <div className="p-5 font-text">
+      <div className="p-5">
 
         {category && (
           <div className="mb-2">
-            <span className="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-2 py-0.5 rounded-full uppercase tracking-wider">
+            <span className="text-secondary text-sm font-medium">
               {category}
             </span>
           </div>
         )}
         
-        <h3 className="text-lg font-semibold leading-tight">
+        <h3 className="text-lg font-semibold leading-tight text-primary">
           <a  className="hover:underline">{title}</a>
         </h3>
 
@@ -46,14 +46,14 @@ export default function ProductCard({
         )}
         
         <div className="mt-4 flex items-center justify-between">
-          <div className="text-xl font-bold text-gray-900">
+          <div className="text-xl font-bold text-primary">
             {price ? `$${price}` : ""}
           </div>
           <div className="flex items-center gap-2">
             <div>
               <button
                 onClick={onDetailsClick}
-                className="inline-flex items-center justify-center w-10 h-10 text-3xl text-amber-800 hover:text-amber-900 transition"
+                className="inline-flex items-center justify-center w-10 h-10 text-3xl text-primary hover:text-primary/90 transition"
               >
                 →
               </button>

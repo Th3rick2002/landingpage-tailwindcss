@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import ProductCard from '../shared/ProductCard';
-import ProductModal from '../shared/ProductModal';
+import ProductCard from '../../shared/product/ProductCard';
+import ProductModal from '../../shared/product/ProductModal';
 
 export default function ProductFilter({ products }) {
   const [filter, setFilter] = useState('Todos');
