@@ -1,0 +1,31 @@
+---
+interface Props {
+    mission: string;
+    vision: string;
+}
+
+const { mission, vision } = Astro.props;
+---
+<section class="w-full py-16 px-6 bg-white text-primary">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+
+        <div class="p-8 border-l-4 border-secondary shadow-lg rounded-lg">
+            <h2 class="font-title text-3xl font-bold mb-4 flex items-center gap-2">
+                <span class="text-secondary"></span> Nuestra Misión
+            </h2>
+            <p class="font-text text-lg leading-relaxed text-primary/90">
+                {mission}
+            </p>
+        </div>
+
+        <div class="p-8 border-l-4 border-secondary shadow-lg rounded-lg">
+            <h2 class="font-title text-3xl font-bold mb-4 flex items-center gap-2">
+                <span class="text-secondary"></span> Nuestra Visión
+            </h2>
+            <p class="font-text text-lg leading-relaxed text-primary/90">
+                {vision}
+            </p>
+        </div>
+
+    </div>
+</section>
