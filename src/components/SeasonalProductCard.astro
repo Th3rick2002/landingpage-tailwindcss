@@ -1,0 +1,56 @@
+---
+interface Props {
+  id: number;
+  name: string;
+  price: number;
+  originalPrice?: number;
+  image: string;
+  category: string;
+  isNew?: boolean;
+  discount?: number;
+}
+
+const { id, name, price, originalPrice, image, category, isNew = false, discount = 0 } = Astro.props;
+---
+
+<div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+  <!-- Badges -->
+  <div class="relative">
+    <img 
+      src={image} 
+      alt={name}
+      class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+      loading="lazy"
+    />
+    <div class="absolute top-2 left-2 flex flex-col gap-1">
+      {isNew && (
+        <span class="bg-green-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+          NUEVO
+        </span>
+      )}
+      {discount > 0 && (
+        <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+          -{discount}%
+        </span>
+      )}
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="p-4">
+    <span class="text-secondary text-sm font-medium">{category}</span>
+    <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-2">{name}</h3>
+    
+    <div class="flex items-center justify-between mt-4">
+      <div class="flex items-center gap-2">
+        <span class="text-xl font-bold text-primary">${price.toFixed(2)}</span>
+        {originalPrice && originalPrice > price && (
+          <span class="text-sm text-gray-500 line-through">${originalPrice.toFixed(2)}</span>
+        )}
+      </div>
+      <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200 font-medium text-sm">
+        Agregar
+      </button>
+    </div>
+  </div>
+</div>

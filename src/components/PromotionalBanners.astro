@@ -1,0 +1,41 @@
+---
+interface Banner {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  ctaText: string;
+  ctaLink: string;
+}
+
+const { banners } = Astro.props;
+---
+
+<section class="py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {banners.map((banner, index) => (
+        <div 
+          class={`relative rounded-2xl overflow-hidden h-64 lg:h-80 ${
+            index === 0 ? 'lg:col-span-2' : ''
+          }`}
+        >
+          <img 
+            src={banner.image} 
+            alt={banner.title}
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent flex items-center">
+            <div class="text-white p-8 max-w-md">
+              <h3 class="text-2xl lg:text-3xl font-bold mb-2">{banner.title}</h3>
+              <p class="text-lg mb-4 opacity-90">{banner.description}</p>
+              <button class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-secondary/90 transition-colors duration-200 font-semibold">
+                {banner.ctaText}
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
