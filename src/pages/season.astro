@@ -12,7 +12,7 @@ const seasonalProducts = [
     name: "Café de Temporada Navideño",
     price: 12.99,
     originalPrice: 15.99,
-    image: "/src/assets/seasonal/cafe_navidad.jpg",
+    image: "/seasonal/cafe_navidad.webp",
     category: "Café Especial",
     isNew: true,
     discount: 20
@@ -21,7 +21,7 @@ const seasonalProducts = [
     id: 2,
     name: "Té Chai Especiado",
     price: 8.99,
-    image: "/src/assets/seasonal/te_chai.jpg",
+    image: "/seasonal/te_chai.jpg",
     category: "Tés",
     isNew: true
   },
@@ -30,7 +30,7 @@ const seasonalProducts = [
     name: "Chocolate Caliente Premium",
     price: 6.99,
     originalPrice: 8.99,
-    image: "/src/assets/seasonal/chocolate.jpg",
+    image: "/seasonal/chocolate.webp",
     category: "Bebidas Calientes",
     discount: 15
   },
@@ -38,7 +38,7 @@ const seasonalProducts = [
     id: 4,
     name: "Galletas de Jengibre",
     price: 4.99,
-    image: "/src/assets/seasonal/galletas.jpg",
+    image: "/seasonal/galletas.webp",
     category: "Repostería",
     isNew: true
   },
@@ -47,7 +47,7 @@ const seasonalProducts = [
     name: "Panettone Artesanal",
     price: 18.99,
     originalPrice: 22.99,
-    image: "/src/assets/seasonal/panettone.jpg",
+    image: "/seasonal/panettone.webp",
     category: "Panadería",
     discount: 18
   },
@@ -55,7 +55,7 @@ const seasonalProducts = [
     id: 6,
     name: "Cappuccino Especial",
     price: 5.99,
-    image: "/src/assets/seasonal/cappuccino.jpg",
+    image: "/seasonal/cappuccino.webp",
     category: "Café Especial",
     isNew: true
   }
@@ -65,25 +65,25 @@ const seasonalCategories = [
   {
     id: 1,
     name: "Cafés de Temporada",
-    image: "/src/assets/seasonal/cafes.jpg",
+    image: "/seasonal/cafes.webp",
     productCount: 12
   },
   {
     id: 2,
     name: "Tés Especiales",
-    image: "/src/assets/seasonal/tes.jpg",
+    image: "/seasonal/tes.webp",
     productCount: 8
   },
   {
     id: 3,
     name: "Postres Navideños",
-    image: "/src/assets/seasonal/postres.jpg",
+    image: "/seasonal/postres.webp",
     productCount: 15
   },
   {
     id: 4,
     name: "Bebidas Calientes",
-    image: "/src/assets/seasonal/bebidas.jpg",
+    image: "/seasonal/bebidas.webp",
     productCount: 10
   }
 ];
@@ -93,7 +93,7 @@ const promotionalBanners = [
     id: 1,
     title: "Oferta Especial de Navidad",
     description: "Hasta 40% de descuento en productos seleccionados. Tiempo limitado.",
-    image: "/src/assets/seasonal/banner_navidad.jpg",
+    image: "/seasonal/banner_navidad.webp",
     ctaText: "Ver Ofertas",
     ctaLink: "#productos"
   },
@@ -101,7 +101,7 @@ const promotionalBanners = [
     id: 2,
     title: "Nuevas Bebidas de Invierno",
     description: "Descubre nuestra nueva colección de bebidas calientes para esta temporada.",
-    image: "/src/assets/seasonal/bebidas_invierno.jpg",
+    image: "/seasonal/bebidas_invierno.webp",
     ctaText: "Explorar",
     ctaLink: "#productos"
   },
@@ -109,7 +109,7 @@ const promotionalBanners = [
     id: 3,
     title: "Paquetes de Regalo Perfectos",
     description: "Sets especiales para regalar a tus seres queridos esta Navidad.",
-    image: "/src/assets/seasonal/paquetes.jpg",
+    image: "/seasonal/paquetes.webp",
     ctaText: "Ver Paquetes",
     ctaLink: "#productos"
   }
@@ -121,7 +121,7 @@ const promotionalBanners = [
   <SeasonalHero
     title="Productos de Temporada"
     subtitle="Descubre nuestras especialidades navideñas y bebidas calientes para disfrutar del invierno"
-    backgroundImage="/src/assets/seasonal/hero.jpg"
+    backgroundImage="/seasonal/hero.webp"
   />
 
   <SeasonalCategories categories={seasonalCategories} />
