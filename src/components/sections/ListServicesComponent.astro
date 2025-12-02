@@ -1,0 +1,37 @@
+---
+import CardComponent from "../ui/cards/CardComponent.astro";
+import BottomComponent from "../ui/buttons/BottomComponent.astro";
+---
+
+<section class="my-10 flex flex-col gap-8 justify-center items-center">
+    <h3 class="text-3xl font-title">En Coffee Shop te ofrecemos</h3>
+    <div class="px-6 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-text">
+        <CardComponent image="/coffee-glass.webp">
+            <div>
+                <h5 class="text-2xl font-bold text-primary mb-2">Bebidas calientes</h5>
+                <p class="mb-2">Todas nuestra bebidas calientes como cafes expreso, americanos </p>
+            </div>
+            <div class="flex justify-start">
+                <BottomComponent href="/products" text="Ver Productos" variant="secondary" />
+            </div>
+        </CardComponent>
+        <CardComponent image="/frozen.webp">
+            <div>
+                <h5 class="text-2xl font-bold text-primary mb-2">Bebidas Frias</h5>
+                <p class="mb-2">Todas nuestra bebidas calientes como cafes expreso, americanos </p>
+            </div>
+            <div class="flex justify-start">
+                <BottomComponent href="/products" text="Ver Productos" variant="secondary" />
+            </div>
+        </CardComponent>
+        <CardComponent image="/cake.webp">
+            <div>
+                <h5 class="text-2xl font-bold text-primary mb-2">Postres</h5>
+                <p class="mb-2">Todas nuestra bebidas calientes como cafes expreso, americanos </p>
+            </div>
+            <div class="flex justify-start">
+                <BottomComponent href="/products" text="Ver Productos" variant="secondary" />
+            </div>
+        </CardComponent>
+    </div>
+</section>
