@@ -1,8 +1,165 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import '../styles/global.css'
+import SeasonalHero from '../components/SeasonalHero.astro';
+import SeasonalCategories from '../components/SeasonalCategories.astro';
+import PromotionalBanners from '../components/PromotionalBanners.astro';
+import SeasonalProductCard from '../components/SeasonalProductCard.astro';
+import '../styles/global.css';
+
+// Datos de ejemplo - puedes reemplazar con tus propios datos
+const seasonalProducts = [
+  {
+    id: 1,
+    name: "Café de Temporada Navideño",
+    price: 12.99,
+    originalPrice: 15.99,
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+    category: "Café Especial",
+    isNew: true,
+    discount: 20
+  },
+  {
+    id: 2,
+    name: "Té Chai Especiado",
+    price: 8.99,
+    image: "https://images.unsplash.com/photo-1597481499750-3e11b15f1c04?w=400&h=300&fit=crop",
+    category: "Tés",
+    isNew: true
+  },
+  {
+    id: 3,
+    name: "Chocolate Caliente Premium",
+    price: 6.99,
+    originalPrice: 8.99,
+    image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop",
+    category: "Bebidas Calientes",
+    discount: 15
+  },
+  {
+    id: 4,
+    name: "Galletas de Jengibre",
+    price: 4.99,
+    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop",
+    category: "Repostería",
+    isNew: true
+  },
+  {
+    id: 5,
+    name: "Panettone Artesanal",
+    price: 18.99,
+    originalPrice: 22.99,
+    image: "https://images.unsplash.com/photo-1608190003440-9b6b4a1c15b9?w=400&h=300&fit=crop",
+    category: "Panadería",
+    discount: 18
+  },
+  {
+    id: 6,
+    name: "Cappuccino Especial",
+    price: 5.99,
+    image: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=300&fit=crop",
+    category: "Café Especial",
+    isNew: true
+  }
+];
+
+const seasonalCategories = [
+  {
+    id: 1,
+    name: "Cafés de Temporada",
+    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&h=200&fit=crop",
+    productCount: 12
+  },
+  {
+    id: 2,
+    name: "Tés Especiales",
+    image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=300&h=200&fit=crop",
+    productCount: 8
+  },
+  {
+    id: 3,
+    name: "Postres Navideños",
+    image: "https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?w=300&h=200&fit=crop",
+    productCount: 15
+  },
+  {
+    id: 4,
+    name: "Bebidas Calientes",
+    image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=300&h=200&fit=crop",
+    productCount: 10
+  }
+];
+
+const promotionalBanners = [
+  {
+    id: 1,
+    title: "Oferta Especial de Navidad",
+    description: "Hasta 40% de descuento en productos seleccionados. Tiempo limitado.",
+    image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&h=300&fit=crop",
+    ctaText: "Ver Ofertas",
+    ctaLink: "#"
+  },
+  {
+    id: 2,
+    title: "Nuevas Bebidas de Invierno",
+    description: "Descubre nuestra nueva colección de bebidas calientes para esta temporada.",
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+    ctaText: "Explorar",
+    ctaLink: "#"
+  }
+];
 ---
 
-<Layout title="Temporada">
+<Layout title="Productos de Temporada - Coffee Shop">
+  <SeasonalHero 
+    title="Productos de Temporada" 
+    subtitle="Descubre nuestras especialidades navideñas y bebidas calientes para disfrutar del invierno"
+    backgroundImage="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1200&h=600&fit=crop"
+  />
 
+  <SeasonalCategories categories={seasonalCategories} />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4 font-title">Productos Destacados</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Nuestra selección especial para esta temporada festiva
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {seasonalProducts.map((product) => (
+          <SeasonalProductCard {...product} />
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <button class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 font-semibold text-lg">
+          Ver Todos los Productos
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <PromotionalBanners banners={promotionalBanners} />
+
+  <!-- Newsletter Section -->
+  <section class="py-16 bg-primary text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4 font-title">No Te Pierdas Nuestras Ofertas</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Suscríbete y recibe las últimas novedades y promociones exclusivas
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+        <input 
+          type="email" 
+          placeholder="Tu correo electrónico"
+          class="px-4 py-3 rounded-lg text-gray-800 flex-1 min-w-0"
+        />
+        <button class="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-secondary/90 transition-colors duration-200 font-semibold whitespace-nowrap">
+          Suscribirse
+        </button>
+      </div>
+    </div>
+  </section>
 </Layout>
