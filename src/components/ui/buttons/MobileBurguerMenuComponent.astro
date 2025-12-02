@@ -2,11 +2,10 @@
 import LinkIconComponent from "../../shared/LinkIconComponent.astro";
 ---
 
-<button id="btnBurguer" class="" client:load>
+<button id="btnBurguer" class="z-50" client:load>
   <span id="icon-open">
     <LinkIconComponent name="menu" color="white" size="sm" type="regular" />
   </span>
-
     <span id="icon-close" class="hidden">
     <LinkIconComponent name="x" color="white" size="sm" type="regular" />
   </span>
@@ -23,5 +22,10 @@ import LinkIconComponent from "../../shared/LinkIconComponent.astro";
         isOpen = !isOpen;
         iconOpen.classList.toggle("hidden", isOpen);
         iconClose.classList.toggle("hidden", !isOpen);
+
+        const event = new CustomEvent('toggle-menu', {
+            detail: { isOpen: isOpen }
+        });
+        document.dispatchEvent(event);
     });
 </script>

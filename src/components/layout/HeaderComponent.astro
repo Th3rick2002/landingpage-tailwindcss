@@ -16,4 +16,44 @@ import MobileBurgerMenuComponent from "../ui/buttons/MobileBurguerMenuComponent.
     <nav class="flex md:hidden">
         <MobileBurgerMenuComponent />
     </nav>
+
+    <div id="mobile-menu" class="hidden fixed justify-center top-24 left-0 w-full bg-primary z-40 shadow-lg">
+        <nav class="flex flex-col items-center py-8 space-y-10">
+            <LinkComponent link="/" text="Inicio" class="text-xl py-3" />
+            <LinkComponent link="/products" text="Productos" class="text-xl py-3" />
+            <LinkComponent link="/season" text="Temporada" class="text-xl py-3" />
+            <LinkComponent link="/about" text="Sobre Nosotros" class="text-xl py-3" />
+        </nav>
+    </div>
 </header>
+
+<script client:load>
+    document.addEventListener('toggle-menu', (event) => {
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (event.detail.isOpen) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenu.classList.remove('flex');
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            const event = new CustomEvent('toggle-menu', {
+                detail: { isOpen: false }
+            });
+            document.dispatchEvent(event);
+
+            const iconOpen = document.getElementById('icon-open');
+            const iconClose = document.getElementById('icon-close');
+            if (iconOpen && iconClose) {
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            }
+        });
+    });
+</script>
