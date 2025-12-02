@@ -6,14 +6,13 @@ import PromotionalBanners from '../components/PromotionalBanners.astro';
 import SeasonalProductCard from '../components/SeasonalProductCard.astro';
 import '../styles/global.css';
 
-// Datos de ejemplo - puedes reemplazar con tus propios datos
 const seasonalProducts = [
   {
     id: 1,
     name: "Café de Temporada Navideño",
     price: 12.99,
     originalPrice: 15.99,
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&h=300&fit=crop",
+    image: "/seasonal/cafe_navidad.webp",
     category: "Café Especial",
     isNew: true,
     discount: 20
@@ -22,7 +21,7 @@ const seasonalProducts = [
     id: 2,
     name: "Té Chai Especiado",
     price: 8.99,
-    image: "https://images.unsplash.com/photo-1597481499750-3e11b15f1c04?w=400&h=300&fit=crop",
+    image: "/seasonal/te_chai.jpg",
     category: "Tés",
     isNew: true
   },
@@ -31,7 +30,7 @@ const seasonalProducts = [
     name: "Chocolate Caliente Premium",
     price: 6.99,
     originalPrice: 8.99,
-    image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop",
+    image: "/seasonal/chocolate.webp",
     category: "Bebidas Calientes",
     discount: 15
   },
@@ -39,24 +38,24 @@ const seasonalProducts = [
     id: 4,
     name: "Galletas de Jengibre",
     price: 4.99,
-    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop",
+    image: "/seasonal/galletas.webp",
     category: "Repostería",
     isNew: true
   },
   {
-        id: 5,
-        name: "Panettone Artesanal",
-        price: 18.99,
-        originalPrice: 22.99,
-        image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop",
-        category: "Panadería",
-        discount: 18
-      },
+    id: 5,
+    name: "Panettone Artesanal",
+    price: 18.99,
+    originalPrice: 22.99,
+    image: "/seasonal/panettone.webp",
+    category: "Panadería",
+    discount: 18
+  },
   {
     id: 6,
     name: "Cappuccino Especial",
     price: 5.99,
-    image: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=300&fit=crop",
+    image: "/seasonal/cappuccino.webp",
     category: "Café Especial",
     isNew: true
   }
@@ -66,71 +65,73 @@ const seasonalCategories = [
   {
     id: 1,
     name: "Cafés de Temporada",
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&h=200&fit=crop",
+    image: "/seasonal/cafes.webp",
     productCount: 12
   },
   {
     id: 2,
     name: "Tés Especiales",
-    image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=300&h=200&fit=crop",
+    image: "/seasonal/tes.webp",
     productCount: 8
   },
   {
     id: 3,
     name: "Postres Navideños",
-    image: "https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?w=300&h=200&fit=crop",
+    image: "/seasonal/postres.webp",
     productCount: 15
   },
   {
     id: 4,
     name: "Bebidas Calientes",
-    image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=300&h=200&fit=crop",
+    image: "/seasonal/bebidas.webp",
     productCount: 10
   }
 ];
 
-//TERCER BANNER
 const promotionalBanners = [
   {
     id: 1,
     title: "Oferta Especial de Navidad",
     description: "Hasta 40% de descuento en productos seleccionados. Tiempo limitado.",
-    image: "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?w=600&h=300&fit=crop",
+    image: "/seasonal/banner_navidad.webp",
     ctaText: "Ver Ofertas",
-    ctaLink: "#"
+    ctaLink: "#productos"
   },
   {
     id: 2,
     title: "Nuevas Bebidas de Invierno",
     description: "Descubre nuestra nueva colección de bebidas calientes para esta temporada.",
-    image: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=400&h=300&fit=crop",
+    image: "/seasonal/bebidas_invierno.webp",
     ctaText: "Explorar",
-    ctaLink: "#"
+    ctaLink: "#productos"
   },
   {
     id: 3,
     title: "Paquetes de Regalo Perfectos",
     description: "Sets especiales para regalar a tus seres queridos esta Navidad.",
-    image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600&h=300&fit=crop",
+    image: "/seasonal/paquetes.webp",
     ctaText: "Ver Paquetes",
-    ctaLink: "#"
+    ctaLink: "#productos"
   }
 ];
 ---
 
 <Layout title="Productos de Temporada - Coffee Shop">
+
   <SeasonalHero
     title="Productos de Temporada"
     subtitle="Descubre nuestras especialidades navideñas y bebidas calientes para disfrutar del invierno"
-    backgroundImage="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1200&h=600&fit=crop"
+    backgroundImage="/seasonal/hero.webp"
   />
 
   <SeasonalCategories categories={seasonalCategories} />
 
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-white" id="productos">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-gray-800 mb-4 font-title">Productos Destacados</h2>
+        <h2 class="text-4xl font-bold text-gray-800 mb-4 font-title">
+          Productos Destacados
+        </h2>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
           Nuestra selección especial para esta temporada festiva
         </p>
@@ -152,10 +153,11 @@ const promotionalBanners = [
 
   <PromotionalBanners banners={promotionalBanners} />
 
-  <!-- Newsletter Section -->
   <section class="py-16 bg-primary text-white">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4 font-title">No Te Pierdas Nuestras Ofertas</h2>
+      <h2 class="text-3xl font-bold mb-4 font-title">
+        No Te Pierdas Nuestras Ofertas
+      </h2>
       <p class="text-xl mb-8 max-w-2xl mx-auto">
         Suscríbete y recibe las últimas novedades y promociones exclusivas
       </p>
@@ -166,4 +168,5 @@ const promotionalBanners = [
       </div>
     </div>
   </section>
+
 </Layout>

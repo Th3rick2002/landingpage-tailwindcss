@@ -1,11 +1,11 @@
 ---
 import LinkComponent from "../ui/links/LinkComponent.astro";
-import MobileBurgerMenuComponent from "../MobileBurguerMenuComponent.astro";
+import MobileBurgerMenuComponent from "../ui/buttons/MobileBurguerMenuComponent.astro";
 ---
 
 <header class="bg-primary text-white py-4 px-6 w-full flex justify-between items-center h-24 font-title">
     <div class="w-1/3 flex justify-start items-center">
-        <a href="/public" class="text-white text-3xl font-logo no-underline">Coffee Shop</a>
+        <a href="/" class="text-white text-3xl font-logo no-underline">Coffee Shop</a>
     </div>
     <nav class="lg:w-1/3 md:w-2/3 hidden justify-evenly items-center gap-4 md:flex">
         <LinkComponent link="/" text="Inicio" />
@@ -16,4 +16,44 @@ import MobileBurgerMenuComponent from "../MobileBurguerMenuComponent.astro";
     <nav class="flex md:hidden">
         <MobileBurgerMenuComponent />
     </nav>
+
+    <div id="mobile-menu" class="hidden fixed justify-center top-24 left-0 w-full bg-primary z-40 shadow-lg">
+        <nav class="flex flex-col items-center py-8 space-y-10">
+            <LinkComponent link="/" text="Inicio" class="text-xl py-3" />
+            <LinkComponent link="/products" text="Productos" class="text-xl py-3" />
+            <LinkComponent link="/season" text="Temporada" class="text-xl py-3" />
+            <LinkComponent link="/about" text="Sobre Nosotros" class="text-xl py-3" />
+        </nav>
+    </div>
 </header>
+
+<script client:load>
+    document.addEventListener('toggle-menu', (event) => {
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (event.detail.isOpen) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenu.classList.remove('flex');
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            const event = new CustomEvent('toggle-menu', {
+                detail: { isOpen: false }
+            });
+            document.dispatchEvent(event);
+
+            const iconOpen = document.getElementById('icon-open');
+            const iconClose = document.getElementById('icon-close');
+            if (iconOpen && iconClose) {
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            }
+        });
+    });
+</script>
