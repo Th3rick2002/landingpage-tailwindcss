@@ -1,7 +1,7 @@
 ---
 interface Props {
     text: string;
-    variant?: 'primary' | 'secondary';
+    variant?: 'primary' | 'secondary' | 'tertiary';
     href?: string;
 }
 
@@ -9,7 +9,8 @@ const { text, variant= 'primary', href } = Astro.props;
 
 const button = {
     primary: 'bg-primary text-white',
-    secondary: 'bg-secondary text-white'
+    secondary: 'bg-secondary text-white',
+    tertiary: 'bg-tertiary text-primary'
 }
 ---
 
