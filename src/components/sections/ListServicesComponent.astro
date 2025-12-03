@@ -3,31 +3,58 @@ import CardComponent from "../ui/cards/CardComponent.astro";
 import BottomComponent from "../ui/buttons/BottomComponent.astro";
 ---
 
-<section class="my-10 flex flex-col gap-8 justify-center items-center">
+<section class="my-10 min-h-screen flex flex-col gap-8 justify-center items-center">
     <h2 class="text-4xl font-title">En Coffee Shop te ofrecemos</h2>
     <div class="px-6 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-text">
         <CardComponent image="/coffee-glass.webp">
             <div>
-                <h3 class="text-xl font-bold text-primary mb-2">Bebidas calientes</h3>
-                <p class="mb-2">Todas nuestra bebidas calientes como cafes expreso, americanos </p>
+                <h3 class="text-xl font-bold text-primary mb-2">Cafés Especiales</h3>
+                <p class="mb-2">Desde espresso intenso hasta cappuccino cremoso, cada taza es preparada con granos seleccionados y tostado artesanal.</p>
             </div>
             <div class="flex justify-start">
                 <BottomComponent href="/products" text="Ver Productos" variant="secondary" />
             </div>
         </CardComponent>
-        <CardComponent image="/frozen.webp">
+        <CardComponent image="/frappes.webp">
             <div>
-                <h3 class="text-xl font-bold text-primary mb-2">Bebidas Frias</h3>
-                <p class="mb-2">Todas nuestra bebidas calientes como cafes expreso, americanos </p>
+                <h3 class="text-xl font-bold text-primary mb-2">Refrescantes Helados</h3>
+                <p class="mb-2">Cold brew, frappés y smoothies preparados al instante para refrescar tus momentos más calurosos.</p>
             </div>
             <div class="flex justify-start">
                 <BottomComponent href="/products" text="Ver Productos" variant="secondary" />
             </div>
         </CardComponent>
-        <CardComponent image="/cake.webp">
+        <CardComponent image="/brownies.webp">
             <div>
-                <h3 class="text-xl font-bold text-primary mb-2">Postres</h3>
-                <p class="mb-2">Todas nuestra bebidas calientes como cafes expreso, americanos </p>
+                <h3 class="text-xl font-bold text-primary mb-2">Dulces Tentaciones</h3>
+                <p class="mb-2">Pastelería fresca diaria: cheesecakes, brownies y muffins que complementan perfectamente tu bebida favorita.</p>
+            </div>
+            <div class="flex justify-start">
+                <BottomComponent href="/products" text="Ver Productos" variant="secondary" />
+            </div>
+        </CardComponent>
+        <CardComponent image="/tea.webp">
+            <div>
+                <h3 class="text-xl font-bold text-primary mb-2">Infusiones Naturales</h3>
+                <p class="mb-2">Selección de tés e infusiones herbales, ideales para momentos de relax y bienestar.</p>
+            </div>
+            <div class="flex justify-start">
+                <BottomComponent href="/products" text="Ver Productos" variant="secondary" />
+            </div>
+        </CardComponent>
+        <CardComponent image="/matchas.webp">
+            <div>
+                <h3 class="text-xl font-bold text-primary mb-2">Alternativas Saludables</h3>
+                <p class="mb-2">Opciones sin cafeína, leches vegetales y endulzantes naturales para cada preferencia dietética.</p>
+            </div>
+            <div class="flex justify-start">
+                <BottomComponent href="/products" text="Ver Productos" variant="secondary" />
+            </div>
+        </CardComponent>
+        <CardComponent image="/bartender.webp">
+            <div>
+                <h3 class="text-xl font-bold text-primary mb-2">Experiencias Únicas</h3>
+                <p class="mb-2">Catas, talleres de barismo y blends exclusivos disponibles por tiempo limitado.</p>
             </div>
             <div class="flex justify-start">
                 <BottomComponent href="/products" text="Ver Productos" variant="secondary" />
